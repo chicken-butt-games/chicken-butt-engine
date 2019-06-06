@@ -7,9 +7,9 @@
 #include "Application.h"
 #include "Log.h"
 
-extern NotAVegetable::Application* NotAVegetable::CreateApplication();
+extern NotAVegetable::Application *NotAVegetable::CreateApplication();
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
 
     NotAVegetable::Log::Init();
     NAV_CORE_WARN("Initialized Log!");

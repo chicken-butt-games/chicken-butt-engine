@@ -5,17 +5,19 @@
 #pragma once
 
 
- namespace NotAVegetable {
-     class Application {
-     public:
+namespace NotAVegetable {
+    class Application {
+    public:
         Application();
+
         virtual ~Application();
 
         void Run();
-     };
-     // will be defined by the client
-     Application* CreateApplication();
+    };
 
- }
+    // will be defined by the client
+    Application *CreateApplication();
+
+}
 
 

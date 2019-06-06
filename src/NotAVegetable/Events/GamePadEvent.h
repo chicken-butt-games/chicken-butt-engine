@@ -11,13 +11,13 @@
 namespace NotAVegetable {
     class GamePadEvent : public Event {
     public:
-        inline int GetButtonCode() const {return m_ButtonCode;}
+        inline int GetButtonCode() const { return m_ButtonCode; }
 
         EVENT_CLASS_CATEGORY(EventCategoryGamePad | EventCategoryInput)
 
     protected:
         GamePadEvent(int buttoncode)
-            : m_ButtonCode(buttoncode) {}
+                : m_ButtonCode(buttoncode) {}
 
         int m_ButtonCode;
     };
@@ -25,7 +25,7 @@ namespace NotAVegetable {
     class GamePadButtonPressedEvent : public GamePadEvent {
     public:
         GamePadButtonPressedEvent(int buttoncode, int repeatCount)
-            : GamePadEvent(buttoncode) , m_RepeatCount(repeatCount) {}
+                : GamePadEvent(buttoncode), m_RepeatCount(repeatCount) {}
 
         inline int GetRepeatCount() const { return m_RepeatCount; }
 
@@ -44,9 +44,9 @@ namespace NotAVegetable {
     class GamePadButtonReleasedEvent : public GamePadEvent {
     public:
         GamePadButtonReleasedEvent(int buttoncode)
-            : GamePadEvent(buttoncode) {}
+                : GamePadEvent(buttoncode) {}
 
-         std::string ToString() const override {
+        std::string ToString() const override {
             std::stringstream ss;
             ss << "GamePadButtonRleasedEvent: " << m_ButtonCode;
             return ss.str();

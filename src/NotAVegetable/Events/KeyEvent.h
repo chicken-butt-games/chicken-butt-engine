@@ -11,13 +11,13 @@
 namespace NotAVegetable {
     class KeyEvent : public Event {
     public:
-        inline int GetKeyCode() const {return m_KeyCode;}
+        inline int GetKeyCode() const { return m_KeyCode; }
 
         EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
     protected:
         KeyEvent(int keycode)
-            : m_KeyCode(keycode) {}
+                : m_KeyCode(keycode) {}
 
         int m_KeyCode;
     };
@@ -25,7 +25,7 @@ namespace NotAVegetable {
     class KeyPressedEvent : public KeyEvent {
     public:
         KeyPressedEvent(int keycode, int repeatCount)
-            : KeyEvent(keycode) , m_RepeatCount(repeatCount) {}
+                : KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
         inline int GetRepeatCount() const { return m_RepeatCount; }
 
@@ -44,9 +44,9 @@ namespace NotAVegetable {
     class KeyReleasedEvent : public KeyEvent {
     public:
         KeyReleasedEvent(int keycode)
-            : KeyEvent(keycode) {}
+                : KeyEvent(keycode) {}
 
-         std::string ToString() const override {
+        std::string ToString() const override {
             std::stringstream ss;
             ss << "KeyRleasedEvent: " << m_KeyCode;
             return ss.str();
@@ -58,7 +58,7 @@ namespace NotAVegetable {
     class KeyTypedEvent : public KeyEvent {
     public:
         KeyTypedEvent(int keycode)
-            : KeyEvent(keycode) {}
+                : KeyEvent(keycode) {}
 
         std::string ToString() const override {
             std::stringstream ss;
