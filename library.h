@@ -1,6 +1,0 @@
-#ifndef NOTAVEGETABLE_LIBRARY_H
-#define NOTAVEGETABLE_LIBRARY_H
-
-void hello();
-
-#endif //NOTAVEGETABLE_LIBRARY_H
