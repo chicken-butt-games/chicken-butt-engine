@@ -5,7 +5,6 @@
 #pragma once
 
 
-#include <sstream>
 #include "NotAVegetable/Events/Event.h"
 
 namespace NotAVegetable {

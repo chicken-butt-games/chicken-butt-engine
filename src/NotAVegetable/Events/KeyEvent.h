@@ -6,7 +6,6 @@
 
 #include "NotAVegetable/Events/Event.h"
 
-#include <sstream>
 
 namespace NotAVegetable {
     class KeyEvent : public Event {

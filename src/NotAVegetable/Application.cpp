@@ -1,7 +1,7 @@
 //
 // Created by Muhamed Hassan on 2019-06-05.
 //
-
+#include "navpch.h"
 #include "NotAVegetable/Events/ApplicationEvent.h"
 #include "NotAVegetable/Application.h"
 #include "NotAVegetable/Events/Event.h"
@@ -26,6 +26,5 @@ namespace NotAVegetable {
             NAV_TRACE(e);
         }
 
-        while (true);
     }
 }

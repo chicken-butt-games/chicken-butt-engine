@@ -4,10 +4,9 @@
 
 #pragma once
 
-#include "Event.h"
+#include "NotAVegetable/Events/Event.h"
 
 
-#include <sstream>
 
 namespace NotAVegetable {
     class WindowResizeEvent : public Event {

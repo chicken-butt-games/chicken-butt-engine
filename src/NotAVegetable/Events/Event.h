@@ -5,8 +5,6 @@
 #pragma once
 
 #include "NotAVegetable/Core.h"
-#include <string>
-#include <functional>
 
 namespace NotAVegetable {
     // Events in NotAVegetable are currently blocking

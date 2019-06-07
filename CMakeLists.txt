@@ -13,3 +13,7 @@ add_library(
         src/NotAVegetable/Log.cpp
 )
 
+set_source_files_properties(
+        src/NotAVegetable/navpch.cpp
+        PROPERTIES
+        COMPILE_FLAGS "-include src/NotAVegetable/navpch.h")
