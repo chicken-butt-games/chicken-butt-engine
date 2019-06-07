@@ -10,7 +10,7 @@
 
 namespace NotAVegetable {
     Application::Application() {
-
+        m_Window = std::unique_ptr<Window>(Window::Create());
     }
 
     Application::~Application() {
@@ -18,12 +18,9 @@ namespace NotAVegetable {
     }
 
     void Application::Run() {
-        WindowResizeEvent e(1200, 720);
-        if (e.IsInCategory(EventCategoryApplication)) {
-            NAV_TRACE(e);
-        }
-        if (e.IsInCategory(EventCategoryInput)) {
-            NAV_TRACE(e);
+        while (m_Running) {
+            m_Window->OnUpdate();
+
         }
 
     }
