@@ -16,7 +16,7 @@ add_library(
         src/Platform/MacOS/MacOSWindow.cpp
 )
 
-add_subdirectory(/Users/muhamedhassan/Dropbox/Work/Code/CLionProjects/NotAVegetable/vendor/GLFW)
+add_subdirectory(vendor/GLFW)
 
 target_link_libraries(
         NotAVegetable

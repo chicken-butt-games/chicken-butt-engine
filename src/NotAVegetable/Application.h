@@ -4,7 +4,13 @@
 
 #pragma once
 
-#include "Window.h"
+#include "navpch.h"
+
+#include "NotAVegetable/Window.h"
+
+#include "NotAVegetable/Events/Event.h"
+
+#include "NotAVegetable/Events/ApplicationEvent.h"
 
 namespace NotAVegetable {
     class Application {
@@ -15,7 +21,11 @@ namespace NotAVegetable {
 
         void Run();
 
+        void OnEvent(Event &e);
+
     private:
+        bool OnWindowClosed(WindowCloseEvent &e);
+
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
     };

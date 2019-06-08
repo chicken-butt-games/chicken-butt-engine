@@ -20,7 +20,7 @@ namespace NotAVegetable {
 
         std::string ToString() const override {
             std::stringstream ss;
-            ss << "WidnowResizeEvent: " << m_Width << ", " << m_Height;
+            ss << "WidowResizeEvent: " << m_Width << ", " << m_Height;
             return ss.str();
         }
 
@@ -34,7 +34,7 @@ namespace NotAVegetable {
 
     class WindowCloseEvent : public Event {
     public:
-        WindowCloseEvent() {}
+        WindowCloseEvent() = default;
 
         EVENT_CLASS_TYPE(WindowClose)
 
@@ -43,7 +43,7 @@ namespace NotAVegetable {
 
     class AppTickEvent : public Event {
     public:
-        AppTickEvent() {}
+        AppTickEvent() = default;
 
         EVENT_CLASS_TYPE(AppTick)
 
@@ -52,7 +52,7 @@ namespace NotAVegetable {
 
     class AppUpdateEvent : public Event {
     public:
-        AppUpdateEvent() {}
+        AppUpdateEvent() = default;
 
         EVENT_CLASS_TYPE(AppUpdate)
 
@@ -61,7 +61,7 @@ namespace NotAVegetable {
 
     class AppRenderEvent : public Event {
     public:
-        AppRenderEvent() {}
+        AppRenderEvent() = default;
 
         EVENT_CLASS_TYPE(AppRender)
 

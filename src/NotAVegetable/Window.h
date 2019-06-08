@@ -1,3 +1,7 @@
+#include <utility>
+
+#include <utility>
+
 //
 // Created by Muhamed Hassan on 2019-06-07.
 //
@@ -14,10 +18,10 @@ namespace NotAVegetable {
         unsigned int Width;
         unsigned int Height;
 
-        WindowProps(const std::string &title = "Not a Vegetable Engine",
-                    unsigned int width = 640,
-                    unsigned int height = 360)
-                : Title(title), Width(width), Height(height) {
+        explicit WindowProps(std::string title = "Not a Vegetable Engine",
+                             unsigned int width = 320,
+                             unsigned int height = 240)
+                : Title(std::string(std::move(title))), Width(width), Height(height) {
         }
     };
 
@@ -26,7 +30,7 @@ namespace NotAVegetable {
     public:
         using EventCallbackFn = std::function<void(Event & )>;
 
-        virtual ~Window() {}
+        virtual ~Window() = default;
 
         virtual void OnUpdate() = 0;
 

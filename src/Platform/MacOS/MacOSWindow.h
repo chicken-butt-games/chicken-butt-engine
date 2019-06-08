@@ -11,9 +11,9 @@
 namespace NotAVegetable {
     class MacOSWindow : public Window {
     public:
-        MacOSWindow(const WindowProps &props);
+        explicit MacOSWindow(const WindowProps &props);
 
-        virtual ~MacOSWindow();
+        ~MacOSWindow() override;
 
         void OnUpdate() override;
 
@@ -35,7 +35,7 @@ namespace NotAVegetable {
         virtual void Shutdown();
 
     private:
-        GLFWwindow *m_Window;
+        GLFWwindow *m_Window{};
 
         struct WindowData {
             std::string Title;
