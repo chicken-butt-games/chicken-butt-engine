@@ -5,6 +5,7 @@
 #pragma once
 
 #include "NotAVegetable/Application.h"
+#include "NotAVegetable/Layer.h"
 #include "NotAVegetable/Log.h"
 
 // ---Entry Point-------------------

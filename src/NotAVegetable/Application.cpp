@@ -2,9 +2,7 @@
 // Created by Muhamed Hassan on 2019-06-05.
 //
 #include "navpch.h"
-#include "NotAVegetable/Events/ApplicationEvent.h"
 #include "NotAVegetable/Application.h"
-#include "NotAVegetable/Events/Event.h"
 #include "NotAVegetable/Log.h"
 
 
@@ -19,16 +17,33 @@ namespace NotAVegetable {
 
     Application::~Application() = default;
 
+    void Application::PushLayer(Layer *layer) {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer *layer) {
+        m_LayerStack.PushOverlay(layer);
+    }
+
     void Application::OnEvent(Event &e) {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
         NAV_CORE_TRACE("{0}", e);
+
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
+            (*--it)->OnEvent(e);
+            if (e.Handled)
+                break;
+        }
     }
 
     void Application::Run() {
         while (m_Running) {
-            m_Window->OnUpdate();
+            for (Layer *layer : m_LayerStack)
 
+                layer->OnUpdate();
+
+            m_Window->OnUpdate();
         }
 
     }
