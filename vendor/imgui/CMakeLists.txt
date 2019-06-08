@@ -18,8 +18,6 @@ set(
 )
 
 
-message("srcs: "   ${srcs} )
-
 add_library(
         imgui
         STATIC
