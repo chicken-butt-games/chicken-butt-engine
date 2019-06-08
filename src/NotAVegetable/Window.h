@@ -43,6 +43,7 @@ namespace NotAVegetable {
 
         virtual void SetVSync(bool enabled) = 0;
 
+
         virtual bool IsVSync() const = 0;
 
 

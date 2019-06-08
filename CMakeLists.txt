@@ -8,12 +8,9 @@ add_compile_definitions(
 )
 
 
-include_directories(
-        vendor/spdlog/include
-        src
-        vendor/GLFW/include
-        vendor/GLAD/include
-)
+include_directories(src)
+
+
 add_library(
         NotAVegetable
         SHARED
