@@ -3,10 +3,16 @@ project(NotAVegetable VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
+add_compile_definitions(
+        NAV_DEBUG
+)
+
+
 include_directories(
         vendor/spdlog/include
         src
         vendor/GLFW/include
+        vendor/GLAD/include
 )
 add_library(
         NotAVegetable
@@ -19,10 +25,14 @@ add_library(
 )
 
 add_subdirectory(vendor/GLFW)
+add_subdirectory(vendor/spdlog)
+add_subdirectory(vendor/GLAD)
 
 target_link_libraries(
         NotAVegetable
         glfw
+        spdlog
+        glad
 )
 
 set_source_files_properties(

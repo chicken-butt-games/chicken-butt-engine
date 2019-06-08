@@ -4,8 +4,9 @@
 
 #pragma once
 
-#include "NotAVegetable/Window.h"
+#define GLFW_INCLUDE_NONE
 
+#include "NotAVegetable/Window.h"
 #include <GLFW/glfw3.h>
 
 namespace NotAVegetable {

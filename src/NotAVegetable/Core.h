@@ -4,7 +4,6 @@
 
 #pragma once
 
-#define NAV_DEBUG // TODO: define this in the ide
 
 #ifdef NAV_DEBUG
 #define NAV_ENABLE_ASSERTS
