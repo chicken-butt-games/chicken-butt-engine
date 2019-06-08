@@ -22,17 +22,21 @@ add_library(
         src/Platform/MacOS/MacOSWindow.cpp
         src/NotAVegetable/Layer.cpp
         src/NotAVegetable/LayerStack.cpp
+        src/NotAVegetable/ImGui/ImGuiLayer.cpp
+        src/Platform/OpenGL/ImGuiOpenGLRenderer.cpp
 )
 
 add_subdirectory(vendor/GLFW)
 add_subdirectory(vendor/spdlog)
 add_subdirectory(vendor/GLAD)
+add_subdirectory(vendor/imgui)
 
 target_link_libraries(
         NotAVegetable
         glfw
         spdlog
         glad
+        imgui
 )
 
 set_source_files_properties(

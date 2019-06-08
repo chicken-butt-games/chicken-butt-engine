@@ -8,6 +8,8 @@
 #include "NotAVegetable/Layer.h"
 #include "NotAVegetable/Log.h"
 
+#include "NotAVegetable/ImGui/ImGuiLayer.h"
+
 // ---Entry Point-------------------
 #include "NotAVegetable/EntryPoint.h"
 // ---------------------------------
