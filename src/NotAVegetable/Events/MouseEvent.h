@@ -56,7 +56,7 @@ namespace NotAVegetable {
 
     class MouseButtonEvent : public Event {
     public:
-        inline int GetmouseButton() const { return m_Button; }
+        inline int GetMouseButton() const { return m_Button; }
 
         EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
