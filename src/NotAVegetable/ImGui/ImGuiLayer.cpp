@@ -68,6 +68,10 @@ namespace NotAVegetable {
         ImGuiIO &io = ImGui::GetIO();
         Application &app = Application::Get();
         io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
+        io.DisplayFramebufferScale = ImVec2(2.0f, 2.0f);
+
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
 
         float time = (float) glfwGetTime();
         io.DeltaTime = m_Time > 0.0 ? (time - m_Time) : (1.0f / 60.0f);
@@ -131,8 +135,6 @@ namespace NotAVegetable {
         io.DisplayFramebufferScale = ImVec2(2.0f, 2.0f); // TODO: temporary fix for my retina display
 //        io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
         glViewport(0, 0, e.GetWidth(), e.GetHeight());
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
         return false;
     }
 
