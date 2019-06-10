@@ -128,9 +128,11 @@ namespace NotAVegetable {
     bool ImGuiLayer::OnWindowResizedEvent(WindowResizeEvent &e) {
         ImGuiIO &io = ImGui::GetIO();
         io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
-        io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
+        io.DisplayFramebufferScale = ImVec2(2.0f, 2.0f); // TODO: temporary fix for my retina display
+//        io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
         glViewport(0, 0, e.GetWidth(), e.GetHeight());
-
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
         return false;
     }
 
