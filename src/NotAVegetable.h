@@ -9,6 +9,9 @@
 #include "NotAVegetable/Log.h"
 
 #include "NotAVegetable/Input.h"
+#include "NotAVegetable/KeyCodes.h"
+#include "NotAVegetable/MouseButtonCodes.h"
+#include "NotAVegetable/JoyStickCodes.h"
 
 #include "NotAVegetable/ImGui/ImGuiLayer.h"
 
