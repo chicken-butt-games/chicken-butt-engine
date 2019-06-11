@@ -67,8 +67,15 @@ namespace NotAVegetable {
 
         ImGuiIO &io = ImGui::GetIO();
         Application &app = Application::Get();
-        io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
-        io.DisplayFramebufferScale = ImVec2(2.0f, 2.0f);
+        int screenWidth = app.GetWindow().GetWidth();
+        int screenHeight = app.GetWindow().GetHeight();
+        io.DisplaySize = ImVec2(screenWidth, screenHeight);
+        auto window = static_cast<GLFWwindow *>(Application::Get().GetWindow().GetNativeWindow());
+        int frameBufferScaleWidth, frameBufferScaleHeight;
+        glfwGetFramebufferSize(window, &frameBufferScaleWidth, &frameBufferScaleHeight);
+
+        io.DisplayFramebufferScale = ImVec2((float) frameBufferScaleWidth / (float) screenWidth,
+                                            (float) frameBufferScaleHeight / (float) screenHeight);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -132,8 +139,13 @@ namespace NotAVegetable {
     bool ImGuiLayer::OnWindowResizedEvent(WindowResizeEvent &e) {
         ImGuiIO &io = ImGui::GetIO();
         io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
-        io.DisplayFramebufferScale = ImVec2(2.0f, 2.0f); // TODO: temporary fix for my retina display
-//        io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
+        auto window = static_cast<GLFWwindow *>(Application::Get().GetWindow().GetNativeWindow());
+        int frameBufferScaleWidth, frameBufferScaleHeight;
+        glfwGetFramebufferSize(window, &frameBufferScaleWidth, &frameBufferScaleHeight);
+
+        io.DisplayFramebufferScale = ImVec2((float) frameBufferScaleWidth / (float) e.GetWidth(),
+                                            (float) frameBufferScaleHeight / (float) e.GetHeight());
+
         glViewport(0, 0, e.GetWidth(), e.GetHeight());
         return false;
     }

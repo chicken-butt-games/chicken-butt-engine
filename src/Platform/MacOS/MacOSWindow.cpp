@@ -143,9 +143,8 @@ namespace NotAVegetable {
             data.EventCallback(event);
         });
 
-        static GLFWwindow *joystick_window = m_Window;
+        static GLFWwindow *joystick_window = m_Window; // TODO: find a better solution to this
         glfwSetJoystickCallback([](int jid, int action) {
-
             WindowData &data = *(WindowData *) glfwGetWindowUserPointer(joystick_window);
 
             switch (action) {

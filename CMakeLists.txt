@@ -17,6 +17,7 @@ add_library(
         src/NotAVegetable/Application.cpp
         src/NotAVegetable/Log.cpp
         src/Platform/MacOS/MacOSWindow.cpp
+        src/Platform/MacOS/MacOSInput.cpp
         src/NotAVegetable/Layer.cpp
         src/NotAVegetable/LayerStack.cpp
         src/NotAVegetable/ImGui/ImGuiLayer.cpp

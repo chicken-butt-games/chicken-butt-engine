@@ -5,6 +5,7 @@
 #include "navpch.h"
 #include "NotAVegetable/Application.h"
 #include "NotAVegetable/Log.h"
+#include "NotAVegetable/Input.h"
 
 #include <glad/glad.h>
 

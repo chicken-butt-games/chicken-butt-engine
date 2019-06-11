@@ -1,0 +1,30 @@
+//
+// Created by Muhamed Hassan on 2019-06-11.
+//
+
+#pragma once
+
+#include "navpch.h"
+
+#include "NotAVegetable/Core.h"
+
+namespace NotAVegetable {
+    class Input {
+    public:
+        inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
+
+        inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }
+
+        inline static std::pair<float, float> GetMousePosition() { return s_Instance->GetMousePositionImpl(); }
+
+    protected:
+        virtual bool IsKeyPressedImpl(int keycode) = 0;
+
+        virtual bool IsMouseButtonPressedImpl(int button) = 0;
+
+        virtual std::pair<float, float> GetMousePositionImpl() = 0;
+
+    private:
+        static Input *s_Instance;
+    };
+}
