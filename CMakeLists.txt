@@ -7,9 +7,18 @@ add_compile_definitions(
         NAV_DEBUG
 )
 
+set_source_files_properties(
+        src/NotAVegetable/navpch.cpp
+        PROPERTIES
+        COMPILE_FLAGS "-include src/NotAVegetable/navpch.h"
+)
 
-include_directories(src)
 
+add_subdirectory(vendor/GLFW)
+add_subdirectory(vendor/spdlog)
+add_subdirectory(vendor/GLAD)
+add_subdirectory(vendor/imgui)
+add_subdirectory(vendor/glm)
 
 add_library(
         NotAVegetable
@@ -22,24 +31,25 @@ add_library(
         src/NotAVegetable/LayerStack.cpp
         src/NotAVegetable/ImGui/ImGuiLayer.cpp
         src/Platform/OpenGL/ImGuiOpenGLRenderer.cpp
+        src/navpch.cpp
 )
 
-add_subdirectory(vendor/GLFW)
-add_subdirectory(vendor/spdlog)
-add_subdirectory(vendor/GLAD)
-add_subdirectory(vendor/imgui)
+target_include_directories(
+        NotAVegetable
+        PUBLIC
+        src
+)
+
 
 target_link_libraries(
         NotAVegetable
+        PUBLIC
         glfw
         spdlog
         glad
         imgui
+        glm
 )
 
-set_source_files_properties(
-        src/NotAVegetable/navpch.cpp
-        PROPERTIES
-        COMPILE_FLAGS "-include src/NotAVegetable/navpch.h"
-)
+
 
