@@ -30,8 +30,8 @@ add_library(
         src/NotAVegetable/Layer.cpp
         src/NotAVegetable/LayerStack.cpp
         src/NotAVegetable/ImGui/ImGuiLayer.cpp
-        src/Platform/OpenGL/ImGuiOpenGLRenderer.cpp
         src/navpch.cpp
+        src/NotAVegetable/ImGui/ImGuiBuild.cpp
 )
 
 target_include_directories(

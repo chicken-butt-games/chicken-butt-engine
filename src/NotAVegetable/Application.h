@@ -8,6 +8,7 @@
 #include "NotAVegetable/Events/Event.h"
 #include "NotAVegetable/Events/ApplicationEvent.h"
 #include "NotAVegetable/LayerStack.h"
+#include "NotAVegetable/ImGui/ImGuiLayer.h"
 
 namespace NotAVegetable {
     class Application {
@@ -32,6 +33,9 @@ namespace NotAVegetable {
         bool OnWindowClosed(WindowCloseEvent &e);
 
         std::unique_ptr<Window> m_Window;
+
+        ImGuiLayer *m_ImGuiLayer;
+
         bool m_Running = true;
         LayerStack m_LayerStack;
     private:
