@@ -4,12 +4,10 @@
 
 #pragma once
 
-#include "navpch.h"
-
 #include "NotAVegetable/Window.h"
-#include "NotAVegetable/LayerStack.h"
 #include "NotAVegetable/Events/Event.h"
 #include "NotAVegetable/Events/ApplicationEvent.h"
+#include "NotAVegetable/LayerStack.h"
 
 namespace NotAVegetable {
     class Application {
@@ -28,6 +26,7 @@ namespace NotAVegetable {
         inline static Application &Get() { return *s_Instance; }
 
         inline Window &GetWindow() { return *m_Window; }
+
 
     private:
         bool OnWindowClosed(WindowCloseEvent &e);

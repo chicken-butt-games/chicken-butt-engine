@@ -3,11 +3,13 @@
 //
 
 #include "navpch.h"
+
 #include "NotAVegetable/Application.h"
 #include "NotAVegetable/Log.h"
 #include "NotAVegetable/Input.h"
 
 #include <glad/glad.h>
+
 
 namespace NotAVegetable {
     Application *Application::s_Instance = nullptr;
@@ -35,7 +37,6 @@ namespace NotAVegetable {
     void Application::OnEvent(Event &e) {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(NAV_BIND_EVENT_FN(Application::OnWindowClosed));
-        NAV_CORE_TRACE("{0}", e);
 
         for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
             (*--it)->OnEvent(e);

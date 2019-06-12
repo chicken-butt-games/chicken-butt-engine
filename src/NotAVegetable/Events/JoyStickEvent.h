@@ -12,10 +12,10 @@ namespace NotAVegetable {
     public:
         inline int GetJoyStickID() const { return m_JoyStickID; }
 
-        EVENT_CLASS_CATEGORY(EventCategoryJoyStick)
+        EVENT_CLASS_CATEGORY(EventCategoryJoyStick | EventCategoryInput)
 
     protected:
-        explicit JoyStickEvent(int jid)
+        JoyStickEvent(int jid)
                 : m_JoyStickID(jid) {}
 
         int m_JoyStickID;
@@ -23,7 +23,7 @@ namespace NotAVegetable {
 
     class JoyStickConnectedEvent : public JoyStickEvent {
     public:
-        explicit JoyStickConnectedEvent(int jid)
+        JoyStickConnectedEvent(int jid)
                 : JoyStickEvent(jid) {}
 
 

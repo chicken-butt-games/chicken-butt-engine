@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include "navpch.h"
 #include "NotAVegetable/Events/Event.h"
 
 namespace NotAVegetable {

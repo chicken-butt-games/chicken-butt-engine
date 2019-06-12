@@ -3,13 +3,13 @@
 //
 
 #include "navpch.h"
-#include "ImGuiLayer.h"
+#include "NotAVegetable/ImGui/ImGuiLayer.h"
 
 
 #include <imgui.h>
 #include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 
-#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_NONE // find a smarter way to define this
 
 #include <GLFW/glfw3.h> // TODO: remove this
 #include <glad/glad.h> // TODO: remove this brdo

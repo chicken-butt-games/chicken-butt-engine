@@ -2,7 +2,7 @@
 // Created by Muhamed Hassan on 2019-06-06.
 //
 #include "navpch.h"
-#include "Log.h"
+#include "NotAVegetable/Log.h"
 
 
 namespace NotAVegetable {

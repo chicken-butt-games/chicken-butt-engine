@@ -4,7 +4,7 @@
 
 #pragma once
 
-#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_NONE // TODO: find a smarter way to define this
 
 #include "NotAVegetable/Window.h"
 #include <GLFW/glfw3.h>

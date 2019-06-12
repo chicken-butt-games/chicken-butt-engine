@@ -6,8 +6,6 @@
 
 #include "NotAVegetable/Layer.h"
 
-#include <vector>
-
 namespace NotAVegetable {
     class LayerStack {
     public:

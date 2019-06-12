@@ -1,8 +1,9 @@
 //
 // Created by Muhamed Hassan on 2019-06-11.
 //
+#include "navpch.h"
 
-#include "MacOSInput.h"
+#include "Platform/MacOS/MacOSInput.h"
 #include "NotAVegetable/Application.h"
 
 #include <GLFW/glfw3.h>

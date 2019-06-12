@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "navpch.h"
 #include "NotAVegetable/Core.h"
 
 namespace NotAVegetable {
