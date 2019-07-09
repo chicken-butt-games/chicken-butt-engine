@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "NotAVegetable/Layer.h"
+#include "ChickenButtEngine/Layer.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class LayerStack {
     public:
         LayerStack();
@@ -27,6 +27,6 @@ namespace NotAVegetable {
 
     private:
         std::vector<Layer *> m_Layers;
-        unsigned int m_LayerInsertIndex = 0;
+        unsigned int m_LayerInsertIndex{0};
     };
 }

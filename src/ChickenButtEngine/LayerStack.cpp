@@ -1,10 +1,10 @@
 //
 // Created by Muhamed Hassan on 2019-06-08.
 //
-#include "navpch.h"
-#include "NotAVegetable/LayerStack.h"
+#include "cbepch.h"
+#include "ChickenButtEngine/LayerStack.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     LayerStack::LayerStack() {
     }
 
@@ -23,7 +23,7 @@ namespace NotAVegetable {
     }
 
     void LayerStack::PopLayer(Layer *layer) {
-        auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
+        auto it{std::find(m_Layers.begin(), m_Layers.end(), layer)};
         if (it != m_Layers.end()) {
             m_Layers.erase(it);
             m_LayerInsertIndex--;
@@ -31,7 +31,7 @@ namespace NotAVegetable {
     }
 
     void LayerStack::PopOverlay(Layer *overlay) {
-        auto it = std::find(m_Layers.begin(), m_Layers.end(), overlay);
+        auto it{std::find(m_Layers.begin(), m_Layers.end(), overlay)};
         if (it != m_Layers.end())
             m_Layers.erase(it);
     }

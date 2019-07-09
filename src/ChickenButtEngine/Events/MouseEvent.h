@@ -5,9 +5,9 @@
 #pragma once
 
 
-#include "NotAVegetable/Events/Event.h"
+#include "ChickenButtEngine/Events/Event.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class MouseMovedEvent : public Event {
     public:
         MouseMovedEvent(float x, float y)

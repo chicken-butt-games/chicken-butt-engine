@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include "NotAVegetable/Events/Event.h"
+#include "ChickenButtEngine/Events/Event.h"
 
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class JoyStickEvent : public Event {
     public:
         inline int GetJoyStickID() const { return m_JoyStickID; }

@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "NotAVegetable/Events/Event.h"
+#include "ChickenButtEngine/Events/Event.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class Layer {
     public:
         Layer(const std::string &name = "Layer");

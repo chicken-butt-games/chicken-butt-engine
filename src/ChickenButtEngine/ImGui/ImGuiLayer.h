@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "NotAVegetable/Layer.h"
-#include "NotAVegetable/Events/MouseEvent.h"
-#include "NotAVegetable/Events/KeyEvent.h"
-#include "NotAVegetable/Events/JoyStickEvent.h"
-#include "NotAVegetable/Events/ApplicationEvent.h"
+#include "ChickenButtEngine/Layer.h"
+#include "ChickenButtEngine/Events/MouseEvent.h"
+#include "ChickenButtEngine/Events/KeyEvent.h"
+#include "ChickenButtEngine/Events/JoyStickEvent.h"
+#include "ChickenButtEngine/Events/ApplicationEvent.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class ImGuiLayer : public Layer {
     public:
         ImGuiLayer();
@@ -27,7 +27,7 @@ namespace NotAVegetable {
 
         void End();
     private:
-        float m_Time = 0.0f;
+        float m_Time{0.0f};
 
     };
 

@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "NotAVegetable/Core.h"
+#include "ChickenButtEngine/Core.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class Input {
     public:
         inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }

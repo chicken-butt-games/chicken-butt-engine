@@ -4,11 +4,11 @@
 
 #pragma once
 
-#include "navpch.h"
+#include "cbepch.h"
 
-#include "NotAVegetable/Events/Event.h"
+#include "ChickenButtEngine/Events/Event.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
 
     struct WindowProps {
         std::string Title;

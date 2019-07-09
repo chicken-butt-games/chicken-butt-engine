@@ -2,24 +2,24 @@
 // Created by Muhamed Hassan on 2019-06-05.
 //
 
-#include "navpch.h"
+#include "cbepch.h"
 
-#include "NotAVegetable/Application.h"
-#include "NotAVegetable/Log.h"
-#include "NotAVegetable/Input.h"
+#include "ChickenButtEngine/Application.h"
+#include "ChickenButtEngine/Log.h"
+#include "ChickenButtEngine/Input.h"
 
 #include <glad/glad.h>
 
 
-namespace NotAVegetable {
-    Application *Application::s_Instance = nullptr;
+namespace ChickenButtEngine {
+    Application *Application::s_Instance{nullptr};
 
 
     Application::Application() {
-        NAV_CORE_ASSERT(!s_Instance, "Application already exsits")
+        CBE_CORE_ASSERT(!s_Instance, "Application already exsits")
         s_Instance = this;
         m_Window = std::unique_ptr<Window>(Window::Create());
-        m_Window->SetEventCallback(NAV_BIND_EVENT_FN(Application::OnEvent));
+        m_Window->SetEventCallback(CBE_BIND_EVENT_FN(Application::OnEvent));
 
         m_ImGuiLayer = new ImGuiLayer();
         PushOverlay(m_ImGuiLayer);
@@ -39,9 +39,9 @@ namespace NotAVegetable {
 
     void Application::OnEvent(Event &e) {
         EventDispatcher dispatcher(e);
-        dispatcher.Dispatch<WindowCloseEvent>(NAV_BIND_EVENT_FN(Application::OnWindowClosed));
+        dispatcher.Dispatch<WindowCloseEvent>(CBE_BIND_EVENT_FN(Application::OnWindowClosed));
 
-        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
+        for (auto it{m_LayerStack.end()}; it != m_LayerStack.begin();) {
             (*--it)->OnEvent(e);
             if (e.Handled)
                 break;

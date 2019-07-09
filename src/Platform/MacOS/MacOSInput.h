@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "NotAVegetable/Input.h"
+#include "ChickenButtEngine/Input.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class MacOSInput : public Input {
     protected:
         virtual bool IsKeyPressedImpl(int keycode) override;

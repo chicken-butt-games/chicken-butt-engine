@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "NotAVegetable/Window.h"
-#include "NotAVegetable/Events/Event.h"
-#include "NotAVegetable/Events/ApplicationEvent.h"
-#include "NotAVegetable/LayerStack.h"
-#include "NotAVegetable/ImGui/ImGuiLayer.h"
+#include "ChickenButtEngine/Window.h"
+#include "ChickenButtEngine/Events/Event.h"
+#include "ChickenButtEngine/Events/ApplicationEvent.h"
+#include "ChickenButtEngine/LayerStack.h"
+#include "ChickenButtEngine/ImGui/ImGuiLayer.h"
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class Application {
     public:
         Application();
@@ -36,7 +36,7 @@ namespace NotAVegetable {
 
         ImGuiLayer *m_ImGuiLayer;
 
-        bool m_Running = true;
+        bool m_Running{true};
         LayerStack m_LayerStack;
     private:
         static Application *s_Instance;

@@ -4,11 +4,10 @@
 
 #pragma once
 
-#include "NotAVegetable/Events/Event.h"
+#include "ChickenButtEngine/Events/Event.h"
 
 
-
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class WindowResizeEvent : public Event {
     public:
         WindowResizeEvent(unsigned int width, unsigned int height)

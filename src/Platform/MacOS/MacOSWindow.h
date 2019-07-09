@@ -6,10 +6,10 @@
 
 #define GLFW_INCLUDE_NONE // TODO: find a smarter way to define this
 
-#include "NotAVegetable/Window.h"
+#include "ChickenButtEngine/Window.h"
 #include <GLFW/glfw3.h>
 
-namespace NotAVegetable {
+namespace ChickenButtEngine {
     class MacOSWindow : public Window {
     public:
         explicit MacOSWindow(const WindowProps &props);

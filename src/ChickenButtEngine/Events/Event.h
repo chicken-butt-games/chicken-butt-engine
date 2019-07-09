@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "navpch.h"
-#include "NotAVegetable/Core.h"
+#include "cbepch.h"
+#include "ChickenButtEngine/Core.h"
 
-namespace NotAVegetable {
-    // Events in NotAVegetable are currently blocking
+namespace ChickenButtEngine {
+    // Events in ChickenButtEngine are currently blocking
 
     enum class EventType {
         None = 0,
@@ -40,7 +40,7 @@ namespace NotAVegetable {
 
     class Event {
     public:
-        bool Handled = false;
+        bool Handled{false};
 
         virtual EventType GetEventType() const = 0;
 

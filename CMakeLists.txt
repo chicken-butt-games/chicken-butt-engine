@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.14)
-project(NotAVegetable VERSION 1.0.0)
+project(ChickenButtEngine VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
 add_compile_definitions(
-        NAV_DEBUG
+        CBE_DEBUG
 )
 
 set_source_files_properties(
-        src/NotAVegetable/navpch.cpp
+        src/ChickenButtEngine/cbepch.cpp
         PROPERTIES
-        COMPILE_FLAGS "-include src/NotAVegetable/navpch.h"
+        COMPILE_FLAGS "-include src/NotAVegetable/cbepch.h"
 )
 
 
@@ -21,28 +21,28 @@ add_subdirectory(vendor/imgui)
 add_subdirectory(vendor/glm)
 
 add_library(
-        NotAVegetable
+        ChickenButtEngine
         SHARED
-        src/NotAVegetable/Application.cpp
-        src/NotAVegetable/Log.cpp
+        src/ChickenButtEngine/Application.cpp
+        src/ChickenButtEngine/Log.cpp
         src/Platform/MacOS/MacOSWindow.cpp
         src/Platform/MacOS/MacOSInput.cpp
-        src/NotAVegetable/Layer.cpp
-        src/NotAVegetable/LayerStack.cpp
-        src/NotAVegetable/ImGui/ImGuiLayer.cpp
-        src/navpch.cpp
-        src/NotAVegetable/ImGui/ImGuiBuild.cpp
+        src/ChickenButtEngine/Layer.cpp
+        src/ChickenButtEngine/LayerStack.cpp
+        src/ChickenButtEngine/ImGui/ImGuiLayer.cpp
+        src/cbepch.cpp
+        src/ChickenButtEngine/ImGui/ImGuiBuild.cpp
 )
 
 target_include_directories(
-        NotAVegetable
+        ChickenButtEngine
         PUBLIC
         src
 )
 
 
 target_link_libraries(
-        NotAVegetable
+        ChickenButtEngine
         PUBLIC
         glfw
         spdlog
@@ -50,6 +50,3 @@ target_link_libraries(
         imgui
         glm
 )
-
-
-
